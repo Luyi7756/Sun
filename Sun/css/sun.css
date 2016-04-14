@@ -1,0 +1,10 @@
+.mui-bar-tab .mui-tab-item .icon-homepage.mui-tab-label {
+	font-size: 11px;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis
+}
+*{
+	margin: 0;
+	padding: 0;
+}

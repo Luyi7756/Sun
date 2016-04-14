@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link href="css/sun.css" rel="stylesheet"/>
+    
+</head>
+<body>
+	<div id="menu">
+		<div style="display: none;">
+			<header class="mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 id="title" class="mui-title">健康图谱</h1>
+			</header>
+			
+			<div class="mui-collapse-content">
+							<div id="slider" class="mui-slider">
+								<div class="mui-slider-group mui-slider-loop">
+									<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+									<div class="mui-slider-item mui-slider-item-duplicate">
+										<a href="#">
+											<img src="images/home/picture.jpg">
+										</a>
+									</div>
+									<!-- 第一张 -->
+									<div class="mui-slider-item">
+										<a href="#">
+											<img src="../images/shuijiao.jpg">
+										</a>
+									</div>
+									<!-- 第二张 -->
+									<div class="mui-slider-item">
+										<a href="#">
+											<img src="../images/muwu.jpg">
+										</a>
+									</div>
+									<!-- 第三张 -->
+									<div class="mui-slider-item">
+										<a href="#">
+											<img src="../images/cbd.jpg">
+										</a>
+									</div>
+									<!-- 第四张 -->
+									<div class="mui-slider-item">
+										<a href="#">
+											<img src="../images/yuantiao.jpg">
+										</a>
+									</div>
+									<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+									<div class="mui-slider-item mui-slider-item-duplicate">
+										<a href="#">
+											<img src="../images/shuijiao.jpg">
+										</a>
+									</div>
+								</div>
+								<div class="mui-slider-indicator">
+									<div class="mui-indicator mui-active"></div>
+									<div class="mui-indicator"></div>
+									<div class="mui-indicator"></div>
+									<div class="mui-indicator"></div>
+								</div>
+							</div>
+						</div>
+			
+		</div>
+		<div style="display: none;">
+			<header class="mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 id="title" class="mui-title">问诊</h1>
+			</header>
+		</div>
+		<div style="display: block;">
+			<header class="mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 id="title" class="mui-title">首页</h1>
+			</header>
+		</div>
+		<div style="display: none;">
+			<header class="mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 id="title" class="mui-title">服务</h1>
+			</header>
+			
+		</div>
+		<div style="display: none;">
+			<header class="mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 id="title" class="mui-title">个人</h1>
+			</header>
+		</div>
+	</div>
+		
+	<ul id="nav" class="mui-bar mui-bar-tab">
+		<li class="mui-tab-item">
+			<span class="health">
+				<img src="images/guide/circle_nonactivated.png" style="width: 72%;margin-right: -10px;"/>
+				<img src="images/guide/circle_activate.png" style="width: 120%;display: none;margin-left: -5px;">
+			</span>
+		</li> 
+		<li class="mui-tab-item">
+			<span class="diagnose">
+				<img src="images/guide/inquiry_nonactivated.png"  style="width: 70%;margin-left: 10px;"/>
+				<img src="images/guide/inquiry_activate.png" style="width: 110%;display: none;margin: auto 8px;">
+			</span>
+		</li>
+		<li class="mui-tab-item homepage" >
+			<span class="mui-icon mui-icon-homepage">
+				<img src="images/guide/home_activate.png" style="width: 180%;margin-left: -10px; ">
+				<img src="images/guide/home_nonactivated.png" style="width:180%;margin-left: -8px;display: none;">
+			</span>
+			<span class="mui-tab-label">首页</span>
+		</li>
+		<li class="mui-tab-item">
+			<span class="service">
+				<img src="images/guide/server_nonactivated.png" style="width: 75%; margin: 0PX;">
+				<img src="images/guide/server_activate.png" style="width: 140%;margin:auto -20px;display: none ;">
+			</span>
+		</li>
+		<li class="mui-tab-item">
+			<span class="myself">
+				<img src="images/guide/personal_nonactivated.png" style="width: 72%; margin-left: 10px;"/>
+				<img src="images/guide/personal_activate.png" style="width: 130%; margin-left: -20px; display: none;"/>
+			</span>
+		</li>
+	</ul>
+	<script>
+      	var tabs=function(){
+      	
+	return {
+        set:function(elemId,tabId){
+        	
+            var elem=document.getElementsByTagName('li');
+            var tab=document.getElementById('menu');
+            var img=document.getElementsByTagName('img')
+            
+            var tabs=tab.children;
+            var listNum=elem.length;
+            var tabNum=tabs.length;
+            var imgNum=img.length;
+            
+            for(var i=0;i<listNum;i++){
+                    elem[i].onclick=(function(i){
+                        return function(){
+                            for(var j=0;j<tabNum;j++){
+                                if(i==j){
+                                    tabs[j].style.display="block";
+                                    for(var m=0;m<imgNum;m++)
+                                    	if(m==2*j+1)
+                                    		img[m].style.display="";
+                                    	else if(m==2*j)
+                                    		img[m].style.display="none";
+                                    	else if(m%2)
+                                    		img[m].style.display="none";
+                                    	else
+                                    	img[m].style.display="";
+                                    		
+                                }
+                                else{
+                                    tabs[j].style.display="none";
+                                }
+                            }
+                        }
+                    })(i)
+            }
+        }
+    }
+}();
+tabs.set("nav","menu");
+    </script>
+</body>
+</html>
